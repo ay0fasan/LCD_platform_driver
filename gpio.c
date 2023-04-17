@@ -45,7 +45,7 @@ int gpio_configure_dir(u8 desc_id , u8 dir_value, struct device *dev)
 int gpio_write_value(u8 desc_id, u8 out_value,struct device *dev)
 {
 	struct lcd_private_data *lcd_data = dev_get_drvdata(dev);
-
-        gpiod_set_value(lcd_data->desc[desc_id],out_value);
+	
+	gpiod_set_value(lcd_data->desc[desc_id],out_value);
 	return 0;
 }
