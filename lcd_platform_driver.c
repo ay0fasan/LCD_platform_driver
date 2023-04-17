@@ -72,8 +72,7 @@ static ssize_t lcdscroll_show(struct device *dev, struct device_attribute *attr,
 }
 
 
-static ssize_t lcdscroll_store(struct device *dev,struct device_attribute *attr,\
-	       					const char *buf, size_t size)
+static ssize_t lcdscroll_store(struct device *dev,struct device_attribute *attr, const char *buf, size_t size)
 {
 	int status = 0;
 	struct lcd_private_data *dev_data = dev_get_drvdata(dev);
@@ -200,13 +199,13 @@ int lcd_probe(struct platform_device *pdev)
 	lcd_data.desc[LCD_D6] = gpiod_get(dev, "d6", GPIOD_OUT_LOW);
 	lcd_data.desc[LCD_D7] = gpiod_get(dev, "d7", GPIOD_OUT_LOW);
 
-	if(IS_ERR(lcd_data.desc[LCD_RS]) || \
-			IS_ERR(lcd_data.desc[LCD_RW]) || \
-			IS_ERR(lcd_data.desc[LCD_EN]) || \
-			IS_ERR(lcd_data.desc[LCD_D4]) || \
-			IS_ERR(lcd_data.desc[LCD_D5]) || \
-			IS_ERR(lcd_data.desc[LCD_D6]) || \
-			IS_ERR(lcd_data.desc[LCD_D7])  )
+	if(IS_ERR(lcd_data.desc[LCD_RS]) ||
+		IS_ERR(lcd_data.desc[LCD_RW]) ||
+		IS_ERR(lcd_data.desc[LCD_EN]) ||
+		IS_ERR(lcd_data.desc[LCD_D4]) ||
+		IS_ERR(lcd_data.desc[LCD_D5]) ||
+		IS_ERR(lcd_data.desc[LCD_D6]) ||
+		IS_ERR(lcd_data.desc[LCD_D7]))
 	{
 		dev_err(dev,"Gpio error\n");
 		return -EINVAL;
