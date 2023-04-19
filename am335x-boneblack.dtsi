@@ -26,8 +26,8 @@
 		org,device-serial-num = "PCDEV4ABC000";
 		org,perm = <0x11>;
 	};
-
-       bone_gpio_devs {
+	
+	bone_gpio_devs {
 	  
 		 compatible = "org,bone-gpio-sysfs";
 		 pinctrl-single,names = "default";
